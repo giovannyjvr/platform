@@ -17,7 +17,7 @@ services:
   account:
     hostname: account
     build:
-      context: ./account-service
+      context: ./account-service/insper.store.account-service
       dockerfile: Dockerfile
     environment:
       DATABASE_HOST: db
@@ -27,7 +27,7 @@ services:
   auth:
     hostname: auth
     build:
-      context: ./auth-service
+      context: ./auth-service/insper.store.auth-service
       dockerfile: Dockerfile
     environment:
       JWT_SECRET_KEY: ${JWT_SECRET_KEY:-yrBBgYlvJQeslzFlgX9MFZccToI2fjRFqualquercoisa}
@@ -35,7 +35,7 @@ services:
   gateway:
     hostname: gateway
     build:
-      context: ./gateway-service
+      context: ./gateway-service/insper.store.gateway-service
       dockerfile: Dockerfile
     environment:
       - LOGGING_LEVEL_STORE=${LOGGING_LEVEL_STORE:-debug}
